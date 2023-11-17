@@ -19,9 +19,7 @@ class DoYouHaveSiblings extends StatelessWidget {
               'Do you have any siblings',
               style: kCardContentSmallStyle,
             ),
-            const SizedBox(
-              width: 48,
-            ),
+            const Spacer(),
             Text(
               'yes',
               style: kCardContentSmallStyle,

@@ -26,9 +26,7 @@ class _CheckBoxDataState extends State<CheckBoxData> {
             style: kCardContentStyle,
           ),
         ),
-        SizedBox(
-          width: widget.width,
-        ),
+        const Spacer(),
         Checkbox(
             value: aliveOrDisabled,
             onChanged: (value) {

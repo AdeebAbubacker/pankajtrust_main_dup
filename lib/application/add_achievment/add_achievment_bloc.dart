@@ -13,19 +13,39 @@ part 'add_achievment_state.dart';
 class AddAchievmentBloc extends Bloc<AddAchievmentEvent, AddAchievmentState> {
   AddAchievmentBloc()
       : super(AddAchievmentState(
-            siblingCards: List.empty(), numberOfSiblings: 0)) {
+            achievmentcards: List.empty(), numberofachievment: 0)) {
     on<AddMoreAchievments>((event, emit) {
-      List<Widget> updatedSiblings = List.from(state.siblingCards);
+      List<Widget> updatedSiblings = List.from(state.achievmentcards);
       int newIndex = updatedSiblings.length + 1;
       final numberofSiblings = newIndex;
-      updatedSiblings.add(_buildSiblingCard(newIndex));
+      updatedSiblings.add(_buildachievmentsCard(newIndex, add));
       emit(AddAchievmentState(
-          siblingCards: updatedSiblings, numberOfSiblings: numberofSiblings));
+          achievmentcards: updatedSiblings,
+          numberofachievment: numberofSiblings));
+    });
+
+    on<DeleteSibling>((event, emit) {
+      List<Widget> updatedSiblings = List.from(state.achievmentcards);
+
+      // Ensure the index is within the valid range
+      if (event.achievmentIndex >= 0 &&
+          event.achievmentIndex < updatedSiblings.length) {
+        updatedSiblings.removeAt(event.achievmentIndex);
+
+        // Update the numberOfSiblings based on the updated list length
+        final numberofSiblings = updatedSiblings.length;
+
+        emit(AddAchievmentState(
+          achievmentcards: updatedSiblings,
+          numberofachievment: numberofSiblings,
+        ));
+      }
     });
   }
 }
 
-Widget _buildSiblingCard(int siblingIndex) {
+Widget _buildachievmentsCard(
+    int achievmentIndex, void Function(AddAchievmentEvent) add) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -35,6 +55,26 @@ Widget _buildSiblingCard(int siblingIndex) {
         color: const Color.fromARGB(255, 187, 189, 190),
       ),
       const HeightSpacer(),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          ElevatedButton(
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.red)),
+            onPressed: () {
+              final newachievmentIndex = achievmentIndex - 1;
+              add(DeleteSibling(achievmentIndex: newachievmentIndex));
+            },
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Icon(Icons.delete_outline_rounded),
+                Text('Remove'),
+              ],
+            ),
+          ),
+        ],
+      ),
       LabelInputText(
         label: 'Achievment Details',
         maxlines: 3,

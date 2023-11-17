@@ -238,6 +238,7 @@ class _labelBottomSheetState extends State<labelBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
+    final Devicewidth = MediaQuery.of(context).size.width;
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -245,7 +246,7 @@ class _labelBottomSheetState extends State<labelBottomSheet> {
           Stack(
             children: [
               Container(
-                width: 380,
+                width: Devicewidth,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(

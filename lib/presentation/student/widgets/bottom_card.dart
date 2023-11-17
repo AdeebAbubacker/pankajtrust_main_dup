@@ -12,6 +12,8 @@ class BottomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final deiviceWidth = MediaQuery.of(context).size.width;
+    final deviceHeight = MediaQuery.of(context).size.height;
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
@@ -24,15 +26,16 @@ class BottomCard extends StatelessWidget {
               spreadRadius: 0,
             ),
           ]),
-      width: 370,
-      height: 246,
+      width: deiviceWidth * 0.95,
       child: Column(
         children: [
           const MyPadding(paddingBottom: 5, paddingTop: 14, widget: Textspan()),
           MyPadding(
             paddingBottom: 30,
             widget: Align(
-                alignment: Alignment.bottomRight,
+              alignment: Alignment.bottomRight,
+              child: Padding(
+                padding: EdgeInsets.only(bottom: deviceHeight * 0.01),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -40,7 +43,8 @@ class BottomCard extends StatelessWidget {
                     Align(alignment: Alignment.bottomRight, child: nextBtn),
                   ],
                 ),
-                ),
+              ),
+            ),
           ),
         ],
       ),

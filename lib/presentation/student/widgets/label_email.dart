@@ -39,13 +39,14 @@ class _LabelEmailState extends State<LabelEmail> {
 
   @override
   Widget build(BuildContext context) {
+    final deviceWidth = MediaQuery.of(context).size.width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
         InputLabel(mytext: widget.labelText),
         Container(
-          width: 380,
+          width: deviceWidth,
           height: 50,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),

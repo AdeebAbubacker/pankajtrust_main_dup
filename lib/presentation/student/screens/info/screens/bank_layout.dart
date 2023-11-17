@@ -17,6 +17,7 @@ class BankMainLayout extends StatefulWidget {
 class _BankMainLayoutState extends State<BankMainLayout> {
   @override
   Widget build(BuildContext context) {
+    final deviceWidth = MediaQuery.of(context).size.width;
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -37,13 +38,11 @@ class _BankMainLayoutState extends State<BankMainLayout> {
               //   ),
               // ],
             ),
-            width: 370,
+            width: deviceWidth,
             height: 499,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-              
-
                 widget.cardData,
                 Padding(
                   padding: const EdgeInsets.only(left: 20, right: 20),

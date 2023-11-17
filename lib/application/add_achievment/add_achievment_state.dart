@@ -1,13 +1,10 @@
 part of 'add_achievment_bloc.dart';
 
 @immutable
-class AddAchievmentState {final List<Widget> siblingCards;  final int numberOfSiblings;
+class AddAchievmentState {
+  final List<Widget> achievmentcards;
+  final int numberofachievment;
 
-  AddAchievmentState({required this.siblingCards,this.numberOfSiblings = 1});}
-
-
-
-
-
-
-
+  const AddAchievmentState(
+      {required this.achievmentcards, this.numberofachievment = 0});
+}

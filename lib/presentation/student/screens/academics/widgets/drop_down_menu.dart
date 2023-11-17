@@ -21,12 +21,13 @@ class _MyDropdownState extends State<MyDropdown> {
 
   @override
   Widget build(BuildContext context) {
+    final deviceWidth = MediaQuery.of(context).size.width;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         SizedBox(
           height: 58,
-          width: 330,
+          width: deviceWidth * 0.80,
           child: DropdownButtonFormField<String>(
             itemHeight: 58,
             onChanged: (val) {

@@ -17,8 +17,8 @@ class AchievmentsScreen extends StatelessWidget {
               achievmentDetailsCard: AchievmentsCard(mybool: false),
               title: 'Achievments',
               Achievmentslayoutheight: 500 +
-                  (state.numberOfSiblings > 0
-                      ? (state.numberOfSiblings) * 367
+                  (state.numberofachievment > 0
+                      ? (state.numberofachievment) * 414
                       : 0),
             ),
           ],

@@ -5,10 +5,11 @@ class LineDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final deviceWidth = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.only(top: 20, bottom: 20),
       child: Container(
-        width: 490,
+        width: deviceWidth,
         height: 1,
         decoration: const BoxDecoration(
             color: Color.fromARGB(255, 203, 198, 198),

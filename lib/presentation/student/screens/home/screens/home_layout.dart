@@ -24,6 +24,7 @@ class HomeLayout extends StatefulWidget {
 class _HomeLayoutState extends State<HomeLayout> {
   @override
   Widget build(BuildContext context) {
+    final deviceWidth = MediaQuery.of(context).size.width;
     return SingleChildScrollView(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -35,13 +36,13 @@ class _HomeLayoutState extends State<HomeLayout> {
                   color: Colors.white,
                   boxShadow: const [
                     BoxShadow(
-                      color: Color.fromRGBO(0, 0, 0, 0.16), // RGBA color
-                      offset: Offset(5, 8), // X and Y offset
-                      blurRadius: 15, // Blur radius (B)
-                      spreadRadius: 0, // Spread (S)
+                      color: Color.fromRGBO(0, 0, 0, 0.16),
+                      offset: Offset(5, 8),
+                      blurRadius: 15,
+                      spreadRadius: 0,
                     ),
                   ]),
-              width: 370,
+              width: deviceWidth * 0.95,
               height: widget.HomeLayoutheight,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,7 +56,7 @@ class _HomeLayoutState extends State<HomeLayout> {
                   ),
                   Container(
                     height: 2,
-                    width: 370,
+                    width: deviceWidth * 0.95,
                     color: khorizontlinecolor,
                   ),
                   const SizedBox(

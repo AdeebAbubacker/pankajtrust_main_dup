@@ -32,9 +32,7 @@ class _CheckBoxWorkoutState extends State<CheckBoxWorkout> {
                 style: kCardContentStyle,
               ),
             ),
-            const SizedBox(
-              width: 150,
-            ),
+            Spacer(),
             Checkbox(
                 value: alive,
                 onChanged: (value) {
@@ -69,9 +67,7 @@ class _CheckBoxWorkoutState extends State<CheckBoxWorkout> {
                 style: kCardContentStyle,
               ),
             ),
-            const SizedBox(
-              width: 111,
-            ),
+            Spacer(),
             Checkbox(
                 value: bedridden,
                 onChanged: (value) {

@@ -6,10 +6,7 @@ import 'package:pankajtrust_app/presentation/student/screens/academics/screens/a
 import 'package:pankajtrust_app/presentation/student/screens/academics/screens/achievments_screen.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/screens/family_screen.dart';
 import 'package:pankajtrust_app/presentation/student/screens/home/screens/home_screen.dart';
-import 'package:pankajtrust_app/presentation/student/screens/info/widgets/bank_details_card.dart';
 import 'package:pankajtrust_app/presentation/student/screens/info/screens/info_layout.dart';
-import 'package:pankajtrust_app/presentation/student/screens/info/widgets/personal_details_card.dart';
-import 'package:pankajtrust_app/presentation/student/screens/info/screens/bank_layout.dart';
 import 'package:pankajtrust_app/presentation/student/widgets/bottom_card.dart';
 import 'package:pankajtrust_app/presentation/student/widgets/next_and_previous_button.dart';
 import 'package:pankajtrust_app/presentation/student/widgets/spacer_height.dart';
@@ -48,19 +45,6 @@ class StudentsApplicationForm extends StatelessWidget {
                     children: <Widget>[
                       InfoLayout(
                         title: 'Personal Info',
-                        banktitle:
-                            state.forBankAccountholder ? 'Bank Details' : '',
-                        InfoLayoutheight:
-                            state.forBankAccountholder ? 1180 : 700,
-                        personalDetailCard: PersonalDetailsCard(
-                          mybool: false,
-                        ),
-                        bankData: state.forBankAccountholder
-                            ? BankMainLayout(
-                                cardData:
-                                    BankCard(mybool: state.forNoAccountUsers),
-                                row: const Text(''))
-                            : const Text(''),
                       ),
                       const HeightSpacer(),
                       BottomCard(
@@ -148,7 +132,9 @@ class StudentsApplicationForm extends StatelessWidget {
             ],
             config: StepConfig(
               activeConfig: AcitiveUi(),
-              inactiveConfig: InacitiveUi(iconBgColor: Colors.black45),
+              inactiveConfig: InacitiveUi(
+                iconBgColor: Colors.black45,
+              ),
             ),
           );
         },

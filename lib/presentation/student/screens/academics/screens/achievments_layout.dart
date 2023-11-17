@@ -23,6 +23,7 @@ class Achievmentslayout extends StatefulWidget {
 class _AchievmentslayoutState extends State<Achievmentslayout> {
   @override
   Widget build(BuildContext context) {
+    final deviceWidth = MediaQuery.of(context).size.width;
     return SingleChildScrollView(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -40,7 +41,7 @@ class _AchievmentslayoutState extends State<Achievmentslayout> {
                       spreadRadius: 0, // Spread (S)
                     ),
                   ]),
-              width: 370,
+              width: deviceWidth * 0.95,
               height: widget.Achievmentslayoutheight,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +55,7 @@ class _AchievmentslayoutState extends State<Achievmentslayout> {
                   ),
                   Container(
                     height: 2,
-                    width: 370,
+                    width: deviceWidth * 0.95,
                     color: khorizontlinecolor,
                   ),
                   const SizedBox(

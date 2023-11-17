@@ -13,13 +13,14 @@ class LabelNumericalText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final deviceWidth = MediaQuery.of(context).size.width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
         InputLabel(mytext: mytext),
         Container(
-          width: 380,
+          width: deviceWidth,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               border: Border.all(

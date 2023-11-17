@@ -43,9 +43,7 @@ class _DOBPickerState extends State<DOBPicker> {
               style: kCardContentStyle,
             ),
           ),
-          const SizedBox(
-            width: 39,
-          ),
+          Spacer(),
           IconButton(
               onPressed: () => _selectDate(context),
               icon: const Icon(Icons.calendar_month)),

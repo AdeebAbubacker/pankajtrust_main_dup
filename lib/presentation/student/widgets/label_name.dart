@@ -38,13 +38,14 @@ class _LabelNameState extends State<LabelName> {
 
   @override
   Widget build(BuildContext context) {
+    final deviceWidth = MediaQuery.of(context).size.width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
         InputLabel(mytext: widget.labelText),
         Container(
-          width: 380,
+          width: deviceWidth * 0.95,
           height: 50, // Set a fixed height here
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),

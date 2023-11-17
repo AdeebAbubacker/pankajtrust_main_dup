@@ -62,20 +62,6 @@ class FamilyBloc extends Bloc<FamilyEvent, FamilyState> {
   }
 
   Widget _buildSiblingCard(int siblingIndex) {
-    // Implement the logic to build a sibling card widget
-    // var siblingCount = siblingIndex + 1;
-    // var siblingSuffix = "";
-
-    // if (siblingCount == 1) {
-    //   siblingSuffix = "st";
-    // } else if (siblingCount == 2) {
-    //   siblingSuffix = "nd";
-    // } else if (siblingCount == 3) {
-    //   siblingSuffix = "rd";
-    // } else {
-    //   siblingSuffix = "th";
-    // }
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

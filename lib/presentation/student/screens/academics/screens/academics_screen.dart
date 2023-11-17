@@ -12,7 +12,9 @@ class AcademicsScreen extends StatelessWidget {
         AcademicsLayout(
           AcademicsLayoutheight: 470,
           title: 'Academic Details',
-          academicsDetailsCard: AcademicsCard(mybool: false),
+          academicsDetailsCard: AcademicsCard(
+            mybool: false,
+          ),
         ),
       ],
     );

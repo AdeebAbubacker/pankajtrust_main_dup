@@ -28,35 +28,35 @@ class horizontalRadioBtn extends StatelessWidget {
             style: kCardContentStyle,
           ),
         ),
-        const SizedBox(
-          width: 40,
-        ),
+        const Spacer(),
         Row(
-          children: steps.asMap().entries.map((entry) {
-            final index = entry.key + 1;
-            final content = entry.value;
-            return Row(
-              children: [
-                BlocBuilder<HorizontalRadioBtnBloc, HorizontalRadioBtnState>(
-                  builder: (context, state) {
-                    return Radio(
-                      value: index,
-                      groupValue: state.groupValue,
-                      onChanged: (value) {
-                        context
-                            .read<HorizontalRadioBtnBloc>()
-                            .add(SetGroupValueEvent(value as int));
-                      },
-                    );
-                  },
-                ),
-                Text(
-                  content.choiceLabel,
-                  style: kCardContentStyle,
-                ),
-              ],
-            );
-          }).toList(),
+          children: steps.asMap().entries.map(
+            (entry) {
+              final index = entry.key + 1;
+              final content = entry.value;
+              return Row(
+                children: [
+                  BlocBuilder<HorizontalRadioBtnBloc, HorizontalRadioBtnState>(
+                    builder: (context, state) {
+                      return Radio(
+                        value: index,
+                        groupValue: state.groupValue,
+                        onChanged: (value) {
+                          context
+                              .read<HorizontalRadioBtnBloc>()
+                              .add(SetGroupValueEvent(value as int));
+                        },
+                      );
+                    },
+                  ),
+                  Text(
+                    content.choiceLabel,
+                    style: kCardContentStyle,
+                  ),
+                ],
+              );
+            },
+          ).toList(),
         ),
       ],
     );
